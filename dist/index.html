@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body style="background-color:grey;">
+  <nav class="bg-gray-800">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <!--
+              Icon when menu is closed.
+  
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!--
+              Icon when menu is open.
+  
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex flex-shrink-0 items-center">
+            <img class="h-8 w-auto" src="../OIP.jpg" alt="Your Company">
+          </div>
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="#AB.S" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">AB.S </a>
+              <a href="#home" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">home</a>
+              <a href="#nos produits" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">nos Produits</a>
+              <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+            </div>
+          </div>
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+            <span class="absolute -inset-1.5"></span>
+            <span class="sr-only">View notifications</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+            </svg>
+          </button>
+  
+          <!-- Profile dropdown -->
+          <div class="relative ml-3">
+            <div>
+              <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                <span class="absolute -inset-1.5"></span>
+                <span class="sr-only">Open user menu</span>
+                <img class="h-8 w-8 rounded-full" src="../R.jpg" alt="">
+              </button>
+            </div>
+  
+            <!--
+              Dropdown menu, show/hide based on menu state.
+  
+              Entering: "transition ease-out duration-100"
+                From: "transform opacity-0 scale-95"
+                To: "transform opacity-100 scale-100"
+              Leaving: "transition ease-in duration-75"
+                From: "transform opacity-100 scale-100"
+                To: "transform opacity-0 scale-95"
+            -->
+            <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+              <!-- Active: "bg-gray-100", Not Active: "" -->
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="sm:hidden" id="mobile-menu">
+      <div class="space-y-1 px-2 pb-3 pt-2">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class=mt-6   style="background-image: url('../Prix-des-montres-de-luxe.jpg');" class="bg-no-repeat bg-bottom ... bg-cover" >
+  
+  <pre style="color: blue;"><B><i>AB.S est une société qui se spécialise
+     dans la création de montres de luxe. Fondée en 1950,
+      notre maison horlogère est reconnue pour son savoir-faire exceptionnel et son attention aux détails.
+       Chaque montre est conçue avec précision, utilisant des matériaux
+        de la plus haute qualité et des mécanismes innovants.
+        Notre collection varie des modèles classiques et intemporels à des pièces modernes et avant-gardistes,
+         offrant une large gamme pour tous les goûts. Chez AB.S,
+         </i></B>
+  </pre> 
+  </div>
+  <br>
+  
+  <div class="grid grid-cols-3 gap-4 ...">
+    <div> <div class="max-w-xs max-h-xs bg-gray-500 rounded-lg overflow-hidden shadow-md">
+      <img class="w-full h-40 object-cover" src="../71C6MrDnZGL._AC_UX679_.jpg" alt="Placeholder image">
+      <div class="px-4 py-2">
+        <h2 class="text-xl font-bold text-gray-800">Montre Omega Speedmaster Professional</h2>
+        <p class="text-black">Montre Omega Speedmaster Professional :
+          La montre Omega Speedmaster Professional est une icône de l'horlogerie mondiale,
+           célèbre pour sa robustesse et sa précision.
+            Portée lors des premiers pas de l'homme sur la lune,
+             elle est surnommée la "Moonwatch" et reste un symbole d'aventure 
+             et d'exploration spatiale. Son boîtier en acier inoxydable abrite 
+             nous croyons que une montre est plus qu’un simple instrument de mesure du temps;
+             c’est un symbole de statut, de style et d’histoire personnelle.
+              .</p>
+      </div>
+    </div></div>
+    <div class="place-self-auto ..."><div  class="max-w-sm bg-gray-500  rounded overflow-hidden shadow-lg short-card" style="max-height: 600px;">
+      <img class="w-full h-40 object-cover" src="../81vZKNOzTWL._UL1500_.jpg" alt="ma biographie">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Rolex Submariner</div>
+        <p  class="to-black">
+        
+  
+Montre Rolex Submariner :
+La Rolex Submariner incarne l'élégance intemporelle et la robustesse légendaire.
+ Avec son boîtier en acier inoxydable et sa lunette tournante unidirectionnelle en céramique,
+  elle est conçue pour résister aux rigueurs de la vie quotidienne et aux profondeurs abyssales.
+   Son cadran noir épuré, agrémenté d'aiguilles luminescentes et de marqueurs lumineux,
+    assure une lisibilité parfaite même dans les environnements les plus sombres. Équipée d'un mouvement 
+    mécanique à remontage automatique certifié Chronomètre Superlatif,
+     cette montre est non seulement un symbole de statut,
+      mais aussi un outil fiable pour les passionnés de plongée
+ et les amateurs de montres de luxe.
+  
+ 
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  
+  <div class="grid grid-cols-3 gap-4 ...">
+    <div>
+      <div class="shrink-0 h-60 w-80 ...">
+        <img class="pt-6 ..."  src="../production.jpg" alt="">
+        <pre>Dans l'atelier vibrant de la société de montres,
+    le temps danse au rythme des horloges
+     en construction. Chaque pièce,
+      minutieusement façonnée,
+     porte l'empreinte de l'artisanat
+  méticuleux et de l'innovation technologique.
+   Les mains habiles des horlogers s'affairent
+   avec une précision presque hypnotique, 
+    assemblant les rouages avec une dextérité 
+   héritée de générations d'expertise.
+
+         
+    </pre>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+    <div style="color: black;"><pre><B style="color: blue;"> Our Models:</B>
+  *<u style="color: red;">Rolex Submariner :</u>
+ Une montre de plongée emblématique
+ connue pour sa robustesse 
+ et son design intemporel.
+  *<u style="color: red;">Omega Speedmaster Professional :</u>
+ Également appelée "Moonwatch",
+  c'est la montre qui a été portée
+  lors des missions lunaires de la NASA.
+      *<u style="color: red;">Tag Heuer Carrera :</u>
+  Une montre de sport élégante et
+  sophistiquée, souvent associée
+  à l'univers de la course automobile.
+      *<u style="color: red;">Casio G-Shock :</u>
+  Une montre résistante aux chocs
+  et étanche, populaire auprès des
+  amateurs de sports extrêmes et
+  des professionnels.
+      *<u style="color: red;">Seiko SKX007 :</u>
+  Une montre de plongée abordable et fiable,
+ appréciée pour son excellent rapport 
+ qualité-prix.
+      
+    </pre></div>
+    <div><div class="place-self-auto ..."><div class="max-w-md mx-auto bg-gray-500 p-8 rounded-md shadow-md">
+      <h2 class="text-2xl font-semibold mb-4">Contactez-nous</h2>
+      <form action="#" method="POST">
+          <div class="mb-4">
+              <label for="name" class="block text-gray-700 font-semibold mb-2">Nom</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 borde bg-gray-400 rborder-gray-300 rounded-md focus:outline-none focus:border-blue-500" required>
+          </div>
+          <div class="mb-4">
+              <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-2 borde bg-gray-400 border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required>
+          </div>
+          <div class="mb-4">
+              <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border bg-gray-400 border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required></textarea>
+          </div>
+          <div class="text-center">
+              <button type="submit" class="px-6 py-2 bg-blue-500 text-black font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Envoyer</button>
+          </div>
+      </form>
+  </div></div></div>
+    <div></div>
+    <div></div>
+  </div>   
+  
+  
+ 
+  
+
+
+  
+  
+  
+ 
+
+
+<div class="grid grid-cols-3 gap-4 ...">
+  <div ><img  src="../biden-hommes-horloge-m-canique-mode-skeletion-homme-montres-haut-de-gamme-de-luxe-automatique-tanche.jpeg" alt="poste à l'arc éléctrique">Montre Casio G-Shock GA-2100 :
+
+    Prix : 150 €
+    Caractéristiques :
+    Boîtier en résine robuste et léger.
+    Résistance aux chocs et aux vibrations.
+    Affichage analogique et numérique.
+    Fonction d'heure mondiale avec 29 fuseaux horaires.
+    Chronomètre, compte à rebours et alarme.
+    Étanche jusqu'à 200 mètres.
+    Bracelet en résine souple et confortable.
+    </div>
+  <div class="place-self-auto ..."><img src="../OIP (2).jpg" alt="">Montre Seiko 5 Sports SRPD55K2 :
+
+    Prix : 300 €
+    Caractéristiques :
+    Mouvement automatique Seiko 4R36 avec réserve de marche de 41 heures.
+    Boîtier en acier inoxydable avec finition brossée.
+    Lunette unidirectionnelle en acier avec repère lumineux.
+    Affichage analogique avec jour et date.
+    Résistant à l'eau jusqu'à 100 mètres.
+    Bracelet en acier inoxydable avec boucle déployante.</div>
+  <div><img src="../Zenith-El-Primero-Chronomaster-1969-Top-10-des-montres-mythiques-pour-homme--740x842.jpg" alt="">Montre Apple Watch Series 7 :
+
+    Prix : 450 €
+    Caractéristiques :
+    Écran OLED toujours allumé avec une luminosité jusqu'à 1000 nits.
+    Processeur S7 plus rapide et plus économe en énergie.
+    Surveillance avancée de la santé avec ECG, oxymètre de pouls et suivi du sommeil.
+    GPS intégré et suivi de l'activité physique.
+    Résistance à l'eau jusqu'à 50 mètres.
+    Connectivité cellulaire pour passer des appels et recevoir des messages sans téléphone.
+    Bracelets interchangeables en silicone, cuir ou acier.</div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+
+
+  
+    
+    
+    
+    
+  
+</body>
+
+<footer  class="bg-gray-800 text-gray-300 p-4">
+  <div class="container mx-auto">
+    <div class="flex justify-between items-center">
+        <p>&copy; 2024 Your Website</p>
+        <ul class="flex space-x-4">
+            <li><a href="#" class="hover:text-white">facebook</a>
+            <img class="h-8 w-auto" src="../src\Facebook-2106131405.png" alt=""></li>
+            <li><a href="#" class="hover:text-white">instagram</a>
+            <img class="h-8 w-auto" src="../src\instagram.jpg.jpg" alt=""></li>
+            <li><a href="#" class="hover:text-white">snapshat</a>
+            <img class="h-8 w-auto" src="../src\R.png" alt=""></li>
+            <li><a href="#" class="hover:text-white">tiktok</a>
+            <img class="h-8 w-auto"  src="../src\OIP (1).jpg" alt=""></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</footer>
+</html>
